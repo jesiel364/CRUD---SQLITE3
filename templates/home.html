@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %}Artistas{% endblock %}
+
+{% block content %}
+
+<header>
+  <div class='header_content'>
+    <div class='head' >
+    <h4>Artistas</h4>
+    </div>
+    <div class='content_data'>
+      {% for artista in data %}
+        <div class='data-name'>
+			<a href='{{url_for('artist_info', id = artista.artist_id)}}'>{{artista.artist_name}}</a><br>	
+
+		<span>{{artista.artist_id}}</span>
+
+		</div>
+
+      {% endfor %}
+    </div>
+  </div>
+
+<div class='header_content'>
+    <div class='head' >
+    <h4>Artistas</h4>
+    </div>
+    <div class='content_data'>
+      {% for track in data2 %}
+        <div class='data-name'>
+			<a href='{{url_for('artist_info', id = track.track_id)}}'>{{track.track_name}}</a><br>	
+
+		<span>{{track.track_id}}</span>
+
+		</div>
+
+      {% endfor %}
+    </div>
+  </div>
+</header>
+  
+{% endblock %}
